@@ -26,8 +26,9 @@ docker run busybox ping google.com
 > run for long time `Cntrl + C` to stop`
 
 ```diff
-! ls and echo are two programs inside the busybox file system if it's not it throws you an error :computer: .
+! ls and echo are two programs inside the busybox file system if it's not it throws you an error.
 ```
+:computer:
 
 # docker ps
 ```sh
@@ -37,8 +38,9 @@ docker ps
 ```sh
 docker ps --all
 ```
-> List all running contatners that ever run in my machine.
+> List all running containers that ever run in my machine.
 
 ```diff
-+ docker ps help to get id of all containers :computer: .
++ docker ps help to get the id of all containers.
 ```
+:computer:
