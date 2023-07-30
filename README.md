@@ -151,11 +151,15 @@ get myvalue // "5"
 # The Purpose of the IT Flag
 
 ```mermaid
-graph TD;
-    (created in linux environment)Running processes(echo hi there / redis-cli)-->attach to three communication channels;
-	attach to three communication channels-->STDIN  (standard in)<--stuff you type in terminal;
-    attach to three communication channels-->STDOUT (standard out)-->stuff shows up on the screen;
-    attach to three communication channels-->STDERR  (standard err)-->stuff shows up on the screen;
+sequenceDiagram;
+participant Running processes
+participant STDIN
+participant STDOUT
+participant STDERR
+participant your terminal
+participant your screen
+
+your terminal->>STDIN-->Running processes
 ```
 ```diff
 @@ -it = -i + -t @@
