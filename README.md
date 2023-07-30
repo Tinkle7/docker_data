@@ -28,7 +28,7 @@ docker run busybox ping google.com
 ```diff
 ! ls and echo are two programs inside the busybox file system if it's not it throws you an error.
 ```
-:computer:
+$${\color{orange}! ls and echo are two programs inside the busybox file system if it's not it throws you an error.}$$
 
 # docker ps
 ```sh
@@ -43,4 +43,3 @@ docker ps --all
 ```diff
 + docker ps help to get the id of all containers.
 ```
-:computer:
