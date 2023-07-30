@@ -39,6 +39,7 @@ docker run busybox ping google.com
 /* List all running containers. */
 
 docker ps
+
 /* List all running containers that ever run in my machine. */
 
 docker ps --all
