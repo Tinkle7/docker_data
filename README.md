@@ -91,3 +91,21 @@ docker system prune
 
 docker logs <container id>
 ```
+
+# Stopping Containers
+:heavy_check_mark:
+```sh
+## sent SIGTERM command to the container.
+
+docker stop <container id>
+``` 
+> It gives some time to the container to save some files or do some cleaning before shutdown.
+```sh
+## sent SIGKILL command to the container.
+
+docker kill <container id>
+``` 
+> It shut down immediately
+
+>__Warning__
+> If the ping command `SIGTERM` is not going to shut down the container in `10sec` then docker falls back and ping command `SIGKILL`.
