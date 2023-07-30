@@ -2,6 +2,7 @@
 ```sh
 docker run <image name>
 ```
+- `docker` Reference the Docker client
 - if the image is not there it will get the image from the hub
 - create a container from the image
 - start the container
@@ -14,7 +15,7 @@ docker run <image name>
 
 docker run <image name> command
 ```
-### example
+### Example
 ```sh
 /* ls gives you all the files in the container. */
 
@@ -110,3 +111,39 @@ docker kill <container id>
 
 >__Warning__
 > If the ping command `SIGTERM` is not going to shut down the container in `10sec` then docker falls back and ping command `SIGKILL`.
+
+# Multi-Command Containers
+
+## Executing commands in Running Containers
+```sh
+docker exec -it <container id> <command>
+```
+- `exec` Run another command.
+- `-it` Allows us to Provide input to the container.
+- `<container id>` ID of the container
+- `<command>` Command to execute
+### Example
+> first terminal.
+
+```sh
+/* run Redis in one container */
+
+docker run redis
+```
+> second terminal.
+
+```sh
+/* get the id of running Redis container */
+
+docker ps
+
+/* run another command in the same container */
+
+docker exec -it f00035b5c219 redis-cli
+
+/* try some command */
+
+set myvalue 5
+
+get myvalue // "5"
+```
