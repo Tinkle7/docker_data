@@ -119,14 +119,14 @@ docker kill <container id>
 docker exec -it <container id> <command>
 ```
 - `exec` Run another command.
-- `-it` Allow us to Provide input to the container.
+- `-it` Allows us to Provide input to the container.
 - `<container id>` ID of the container
 - `<command>` Command to execute
 ### Example
 > first terminal.
 
 ```sh
-/* run redis in one container */
+/* run Redis in one container */
 
 docker run redis
 ```
@@ -137,7 +137,7 @@ docker run redis
 
 docker ps
 
-/* run another command in same container */
+/* run another command in the same container */
 
 docker exec -it f00035b5c219 redis-cli
 
@@ -151,14 +151,32 @@ get myvalue // "5"
 # The Purpose of the IT Flag
 
 ```mermaid
-sequenceDiagram;
-    Alice->>+John: Hello John, how are you?
-    Alice->>+John: John, can you hear me?
-    John-->>-Alice: Hi Alice, I can hear you!
-    John-->>-Alice: I feel great!
+erDiagram;
+   
+    redis-cli{
+        string created "created in linux environment"
+        string what "Running processes"
+        string attach "three communication channels"
+    }
+     STDIN ||--o{ redis-cli : "channel"
+     STDIN{
+        string what "standard in"
+     }
+    redis-cli ||--o{ STDOUT : "channel"
+    STDOUT{
+        string what "standard out"
+     }
+    redis-cli ||--o{ STDERR : "channel"
+    STDERR{
+        string what "standard error"
+     }
+
+    STDOUT ||--o{ screen : output
+    STDERR ||--o{ screen :  output
+    terminal ||--o{ STDIN : receives
 ```
 ```diff
 @@ -it = -i + -t @@
 ```
-- `-i` we execute this new command inside the container we want to attach our terminal to the standard in channel of that new running process.
-- `-t` all text from your terminal goning out and comming in show in a nice format in your screen.
+- `-i` we execute this new command inside the container we want to attach our terminal to the standard in the channel of that new running process.
+- `-t` all text from your terminal going out and coming in the show in a nice format on your screen.
