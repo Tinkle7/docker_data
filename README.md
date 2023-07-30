@@ -30,6 +30,8 @@ docker run busybox ping google.com
 ```
 $${\color{orange}! ls and echo are two programs inside the busybox file system if it's not it throws you an error.}$$
 
+> __Note__ ls and echo are two programs inside the busybox file system if it's not it throws you an error.
+
 # docker ps
 ```sh
 docker ps
