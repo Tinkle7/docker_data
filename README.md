@@ -85,7 +85,7 @@ docker system prune
 
 # Retrieving Log Outputs
 > __Note__
-> docker start is sometimes an expensive process it takes time. "-a" can't help you all time.
+> `docker start` is sometimes an expensive process it takes time. "-a" can't help you all time.
 ```sh
 ## Getting a record of all the logs that have been emitted from the container(inspect the container)
 
