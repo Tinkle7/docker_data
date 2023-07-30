@@ -151,29 +151,19 @@ get myvalue // "5"
 # The Purpose of the IT Flag
 
 ```mermaid
-erDiagram;
-   
-    redis-cli{
-        string created "created in linux environment"
-        string what "Running processes"
-        string attach "three communication channels"
-    }
-     STDIN ||--o{ redis-cli : "channel"
-     STDIN{
-        string what "standard in"
-     }
-    redis-cli ||--o{ STDOUT : "channel"
-    STDOUT{
-        string what "standard out"
-     }
-    redis-cli ||--o{ STDERR : "channel"
-    STDERR{
-        string what "standard error"
-     }
-
-    STDOUT ||--o{ screen : output
-    STDERR ||--o{ screen :  output
-    terminal ||--o{ STDIN : receives
+flowchart TD
+A[redis-cli]
+B[STDIN]
+C[STDOUT]
+D[STDERR]
+E[Terminal]
+F[fa:fa-computer screen]
+    B -->|proceed command| A
+    A -->|proceed O/P| C
+    A -->|proceed O/P| D
+    E -->|send command| B
+    C -->|send O/P| F
+    D -->|send O/P| F
 ```
 ```diff
 @@ -it = -i + -t @@
