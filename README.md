@@ -165,6 +165,10 @@ F[fa:fa-computer screen]
     C -->|send O/P| F
     D -->|send O/P| F
 ```
+> __Note__
+> Running processes are (ex:- echo hi there / redis-cli) created in Linux environment
+> It attaches to three communication channels.
+
 ```diff
 @@ -it = -i + -t @@
 ```
