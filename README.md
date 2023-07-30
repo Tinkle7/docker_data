@@ -56,7 +56,7 @@ docker ps --all
 
 docker create <image name>
 
-## start a container.
+## Start a container.
 
 docker start <container id>
 ```
@@ -93,10 +93,9 @@ docker logs <container id>
 ```
 
 # Stopping Containers
-:heavy_check_mark:
 ```sh
 ## sent SIGTERM command to the container.
-
+:heavy_check_mark:
 docker stop <container id>
 ``` 
 > It gives some time to the container to save some files or do some cleaning before shutdown.
