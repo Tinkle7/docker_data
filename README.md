@@ -41,7 +41,7 @@ docker ps --all
 > docker ps help to get the id of all containers.
 
 
-## container lifecycle
+# container lifecycle
 ```diff 
 + docker run = ducker create + ducker start
 ```
@@ -60,3 +60,24 @@ docker start <container id>
 docker start -a <container id>
 ```
 <sub>"-a" watch for output from the container and give it to your terminal.</sub>
+
+# Restarting Stopped Containers
+- `docker ps --all` from this we can get the container id.
+- `docker start -a <container id>` restart the stopped container.
+> __Warning__
+> We can not displace the default command.
+
+# Removing Stopped Containers
+```sh
+## delete stopped containers + networks not used by at least one container + all dangling images + all build cache
+
+docker system prune
+``` 
+
+# Retrieving Log Outputs
+> __Note__
+> docker start is sometimes an expensive process it takes time. "-a" can't help you all time.
+```sh
+## Getting a record of all the logs that have been emitted from the container(inspect the container)
+docker logs <container id>
+```
