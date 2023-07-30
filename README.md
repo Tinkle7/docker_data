@@ -119,25 +119,25 @@ docker kill <container id>
 docker exec -it <container id> <command>
 ```
 - `exec` Run another command.
-- `-it` Allows us to Provide input to the container.
+- `-it` Allow us to Provide input to the container.
 - `<container id>` ID of the container
 - `<command>` Command to execute
 ### Example
 > first terminal.
 
 ```sh
-/* run Redis in one container */
+/* run redis in one container */
 
 docker run redis
 ```
 > second terminal.
 
 ```sh
-/* get the id of running Redis container */
+/* get id of running redis container */
 
 docker ps
 
-/* run another command in the same container */
+/* run another command in same container */
 
 docker exec -it f00035b5c219 redis-cli
 
@@ -147,3 +147,18 @@ set myvalue 5
 
 get myvalue // "5"
 ```
+
+# The Purpose of the IT Flag
+
+```mermaid
+graph TD;
+    (created in linux environment)Running processes(echo hi there / redis-cli)-->attach to three communication channels;
+	attach to three communication channels-->STDIN  (standard in)<--stuff you type in terminal;
+    attach to three communication channels-->STDOUT (standard out)-->stuff shows up on the screen;
+    attach to three communication channels-->STDERR  (standard err)-->stuff shows up on the screen;
+```
+```diff
+@@ -it = -i + -t @@
+```
+- `-i` we execute this new command inside the container we want to attach our terminal to the standard in channel of that new running process.
+- `-t` all text from your terminal goning out and comming in show in a nice format in your screen.
