@@ -133,7 +133,7 @@ docker run redis
 > second terminal.
 
 ```sh
-/* get id of running redis container */
+/* get the id of running Redis container */
 
 docker ps
 
@@ -166,7 +166,7 @@ F[fa:fa-computer screen]
     D -->|send O/P| F
 ```
 > __Note__
-> Running processes are (ex:- echo hi there / redis-cli) created in Linux environment
+> Running processes are (ex:- `echo hi there` / `redis-cli`) created in a Linux environment
 > It attaches to three communication channels.
 
 ```diff
