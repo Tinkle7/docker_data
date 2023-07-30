@@ -10,21 +10,21 @@ docker run <image name>
 
 # default command override
 ```sh
-## Run the container with the alternative command
+/* Run the container with the alternative command. */
 
 docker run <image name> command
 ```
 ### example
 ```sh
-## ls gives you all the files in the container.
+/* ls gives you all the files in the container. */
 
 docker run busybox ls 
 
-## echo hi gives hi in the terminal.
+/* echo hi gives hi in the terminal. */
 
 docker run busybox echo hi 
 
-## ping google.com help to run the program infinitely.
+/* ping google.com help to run the program infinitely. */
 
 docker run busybox ping google.com
 ```
@@ -36,10 +36,10 @@ docker run busybox ping google.com
 
 # docker ps
 ```sh
-## List all running containers.
+/* List all running containers. */
 
 docker ps
-## List all running containers that ever run in my machine.
+/* List all running containers that ever run in my machine. */
 
 docker ps --all
 ```
@@ -52,11 +52,11 @@ docker ps --all
 + docker run = ducker create + ducker start
 ```
 ```sh
-## Create a container.
+/* Create a container. */
 
 docker create <image name>
 
-## Start a container.
+/* Start a container. */
 
 docker start <container id>
 ```
@@ -64,7 +64,7 @@ docker start <container id>
 >`docker start` not gonna show you information coming out from the terminal, but `docker run` show you information coming out from the terminal.
 
 ```sh
-## Start a container with logs.
+/* Start a container with logs. */
 
 docker start -a <container id>
 ```
@@ -78,7 +78,7 @@ docker start -a <container id>
 
 # Removing Stopped Containers
 ```sh
-## delete stopped containers + networks not used by at least one container + all dangling images + all build cache
+/* delete stopped containers + networks not used by at least one container + all dangling images + all build cache */
 
 docker system prune
 ``` 
@@ -87,20 +87,21 @@ docker system prune
 > __Note__
 > `docker start` is sometimes an expensive process it takes time. "-a" can't help you all time.
 ```sh
-## Getting a record of all the logs that have been emitted from the container(inspect the container)
+/* Getting a record of all the logs that have been emitted from the container(inspect the container) */
 
 docker logs <container id>
 ```
 
 # Stopping Containers
+### ideal method :heavy_check_mark:
 ```sh
-## sent SIGTERM command to the container.
-:heavy_check_mark:
+/* sent SIGTERM command to the container. */
+
 docker stop <container id>
 ``` 
 > It gives some time to the container to save some files or do some cleaning before shutdown.
 ```sh
-## sent SIGKILL command to the container.
+/* sent SIGKILL command to the container. */
 
 docker kill <container id>
 ``` 
