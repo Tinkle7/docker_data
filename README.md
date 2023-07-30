@@ -152,14 +152,10 @@ get myvalue // "5"
 
 ```mermaid
 sequenceDiagram;
-participant Running processes
-participant STDIN
-participant STDOUT
-participant STDERR
-participant your terminal
-participant your screen
-
-your terminal->>STDIN-->Running processes
+    Alice->>+John: Hello John, how are you?
+    Alice->>+John: John, can you hear me?
+    John-->>-Alice: Hi Alice, I can hear you!
+    John-->>-Alice: I feel great!
 ```
 ```diff
 @@ -it = -i + -t @@
