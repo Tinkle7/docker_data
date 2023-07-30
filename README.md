@@ -79,5 +79,6 @@ docker system prune
 > docker start is sometimes an expensive process it takes time. "-a" can't help you all time.
 ```sh
 ## Getting a record of all the logs that have been emitted from the container(inspect the container)
+
 docker logs <container id>
 ```
